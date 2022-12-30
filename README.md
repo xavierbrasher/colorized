@@ -4,7 +4,7 @@ Colorized is a simple rust library that allows for you to display color to the c
 
 # Getting Started
 
-Just add "colorized = 0.8.5" to your Cargo.toml to install it
+Just add the line on [crates.io](https://crates.io/crates/colorized) to your Cargo.toml to install it
 
 # Usage
 

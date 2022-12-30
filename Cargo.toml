@@ -1,11 +1,11 @@
 [package]
 name = "colorized"
-version = "0.8.7"
+version = "0.9.0"
 edition = "2021"
 authors = ["Xavier Brasher <xavier.brasher@gmail.com>"]
 license = "MIT"
 description = "A tool to colorized output"
-documentation = "https://github.com/xavierbrasher/colorized/blob/main/README.md"
+documentation = "https://docs.rs/crate/colorized/latest"
 readme = "README.md"
 homepage = "https://github.com/xavierbrasher/colorized" 
 repository = "https://github.com/xavierbrasher/colorized"

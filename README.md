@@ -11,14 +11,14 @@ Just add "colorized = 0.8.5" to your Cargo.toml to install it
 To use Colorized all you have to do is
 
 ```rust
-use Colorized::{color_definations::*, commands::*}
+use colorized::{color_definations::*, commands::*};
 
 fn main() {
   let fg: ColorsFg = ColorsFg::new();
   let bg: ColorsBg = ColorsBg::new();
 
   println!("{}", colorize_this("Wow this is amazing", bg.green_bg));
-  colorize_println("This is just so efficent", fg.bright_red_fg)
+  colorize_println("This is just so efficent", fg.bright_red_fg);
 }
 ```
 

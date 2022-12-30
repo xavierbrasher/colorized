@@ -10,7 +10,7 @@ Just add "colorized = 0.8.5" to your Cargo.toml to install it
 
 To use Colorized all you have to do is
 
-```
+```rust
 use Colorized::{color_definations::*, commands::*}
 
 fn main() {

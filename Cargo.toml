@@ -6,8 +6,8 @@ authors = ["Xavier Brasher <xavier.brasher@gmail.com>"]
 license = "MIT"
 description = "A tool to colorized output"
 readme = "README.md"
-homepage = "https://github.com/you/grrs"
-repository = "https://github.com/you/grrs"
+homepage = "https://github.com/xavierbrasher/colorized" 
+repository = "https://github.com/xavierbrasher/colorized"
 keywords = ["color", "command", "cli"]
 categories = ["command-line-utilities"]
 

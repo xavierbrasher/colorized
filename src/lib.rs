@@ -1,11 +1,11 @@
-pub mod colors_definations;
+pub mod color_definations;
 pub mod commands;
 
 
 #[cfg(test)]
 mod tests {
   
-    use crate::colors_definations::*;
+    use crate::color_definations::*;
     use crate::commands::*;
     #[test]
     fn test_bg() {

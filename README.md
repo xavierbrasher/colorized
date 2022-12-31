@@ -11,14 +11,13 @@ Just add the line on [crates.io](https://crates.io/crates/colorized) to your Car
 To use Colorized all you have to do is
 
 ```rust
-use colorized::{color_definations::*, commands::*};
+use colorized::*;
 
 fn main() {
-  let fg: ColorsFg = ColorsFg::new();
-  let bg: ColorsBg = ColorsBg::new();
-
-  println!("{}", colorize_this("Wow this is amazing", bg.green_bg));
-  colorize_println("This is just so efficent", fg.bright_red_fg);
+  println!("{}", "This is so cool".color(Colors::BrightGreenFg));
+  let this: String = colorize_this("wowzers", Colors::BrightBlackBg);
+  colorize_print("Wow this is great", Colors::BrightCyanFg);
+  colorize_println("Wow this is great", Colors::BrightCyanFg);
 }
 ```
 
@@ -26,37 +25,97 @@ fn main() {
 
 Colorized uses ASCI Codes and thats how it remains very simple. In the source code you may be able to tell that it is my first time making and uploading a libary but I hope this libary could be useful.
 
-## Example of how you could use this
+# Colors Enum
+
+This enum makes it easy to access all of the colors and color values.
+
+## Examples
 
 ```rust
-use colorized::color_definations::*;
+use colorized::*;
 
 fn main() {
-  let bg = ColorsBg::new();
-  println!("{} Foo, Bar?? {}", bg.bright_red_bg, bg.reset_bg);
+  println!("This is with color:  {} woah {}", Colors::BlueFg.value(), Colors::Reset.value());
+  println!("Same thing but easier: {}", "Oh my".color(Colors::BrightCyanBg));
+  let coloredString = colorize_this("This is color", Colors::YellowFg);
 }
 ```
 
-This shows that this crate is just a package of easy to access ascii codes with a few helper functions.
+## Implementation
 
-## Helper Function Examples
+The implementation that allows the Colors Enum to a &str value
+
+### Examples
 
 ```rust
-use colorized::{color_definations::*, commands::*};
+use colorized::Colors;
 
 fn main() {
-  let bg = ColorsBg::new();
-  let fg = ColorsFg::new();
-
-  println!("{}", colorize_this("This returns a colorized version of this", fg.bright_green_fg));
-  colorize_println("this does the same thing but with a new line char", fg.magenta_fg);
-  colorize_print("This just prints it without a new line char ", bg.cyan_bg);
+  assert_eq!(Colors::BlueFg.value(), "\x1b[34m")
 }
 ```
 
-## Format of color
+# Colors Traits
 
-{ColorName}\_{FG or BG}
+This allows Strings and &str to have color with .color(COLOR_ENUM)
+
+## Examples
+
+```rust
+use colorized::*;
+
+fn main() {
+    println!("{}", "Wow".color(Colors::CyanFg));
+    let john: String = String::from(":)");
+    println!("{}",  john.color(Colors::BrightMagentaBg));
+}
+```
+
+# Colorize Print
+
+This is a funcition that prints a full colored sentence without a new line charactor
+
+## Examples
+
+```rust
+use colorized::*;
+
+fn main() {
+  colorize_print("Wow this is great", Colors::BrightCyanFg);
+}
+```
+
+# Colorize PrintLn
+
+This is a funcition that prints a full colored sentence with a new line charactor
+
+## Examples
+
+```rust
+use colorized::*;
+
+fn main() {
+  colorize_println("Wow this is great", Colors::BrightCyanFg);
+}
+```
+
+# Colorize this
+
+This function adds color to anything that isn't implemented
+
+## Examples
+
+```rust
+use colorized::*;
+
+fn main() {
+  let this: String = colorize_this("wowzers", Colors::BrightBlackBg);
+}
+```
+
+# Format of color
+
+Colors::{COLORNAME}\_<FG or BG>
 
 All Posible Colors
 
